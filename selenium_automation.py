@@ -8,9 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
-
-
-
 # Função principal que executa a automação
 def execute_mercos_automation(email, senha, lista_de_pedidos):
     LOGIN_URL = "https://app.mercos.com/login"
@@ -22,12 +19,12 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     chrome_options.add_argument("--disable-cache")
     chrome_options.add_argument("--disk-cache-size=0")
     
-    # --- Configurações para rodar headless (sem abrir o navegador) ---
-    # Descomente a linha abaixo se quiser que o navegador não apareça.
-    # chrome_options.add_argument("--headless") 
-    # chrome_options.add_argument("--disable-gpu") # Necessário para headless em alguns SOs
-    # chrome_options.add_argument("--no-sandbox")
-    # chrome_options.add_argument("--disable-dev-shm-usage")
+    # Configurações obrigatórias para rodar em modo headless no Railway
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--remote-debugging-port=9222")
 
     service = ChromeService(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -59,7 +56,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
             
             # Garante que estamos na tela de listagem de pedidos
             xpath_pedidos_menu = "//span[normalize-space()='Pedidos']"
-            # É importante esperar que o elemento esteja clicável para evitar erros se a página não carregou completamente.
             wait.until(EC.element_to_be_clickable((By.XPATH, xpath_pedidos_menu))).click()
             log_and_print("Na tela de listagem de Pedidos.")
             
@@ -89,7 +85,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
                 campo_preco = wait.until(EC.visibility_of_element_located((By.ID, "id_preco_final")))
                 campo_preco.clear(); campo_preco.send_keys(produto['preco']); time.sleep(2)
                 
-                # A espera aqui é importante para garantir que o botão "Adicionar" esteja visível e clicável.
                 botao_adicionar = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@class='botao medio primario' and normalize-space()='Adicionar']")))
                 botao_adicionar.click()
                 log_and_print(f"--> Produto '{produto['codigo']}' ADICIONADO.")
@@ -111,7 +106,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
             log_and_print("Detalhes do pedido salvos.")
             time.sleep(2) # Pausa para a página processar após salvar
 
-            # Aguardar o botão Gerar pedido se tornar clicável
             botao_gerar_pedido = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn_gerar_pedido")))
             driver.execute_script("arguments[0].click();", botao_gerar_pedido)
             log_and_print(f"✅ PEDIDO {i+1} GERADO COM SUCESSO!")
@@ -123,8 +117,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     except Exception as e:
         error_message = f"❌ Ocorreu um erro durante a automação: {e}"
         log_and_print(error_message)
-        # Opcional: salvar screenshot apenas no caso de erro se rodar headless
-        # driver.save_screenshot("erro_screenshot.png") 
         return {"status": "error", "message": error_message, "log": log_messages}
 
     finally:
