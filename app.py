@@ -3,16 +3,20 @@ import json
 import threading
 from selenium_automation import execute_mercos_automation
 import os
-from dotenv import load_dotenv
+import logging
 
-# Carregar variáveis do arquivo .env (apenas para desenvolvimento local)
-if os.getenv('RAILWAY_ENVIRONMENT') != 'production':
-    load_dotenv()
+# Configuração de logging para depuração
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+logger.debug(f"FLASK_SECRET_KEY: {os.getenv('FLASK_SECRET_KEY')}")
+logger.debug(f"LOGIN_USERNAME: {os.getenv('LOGIN_USERNAME')}")
+logger.debug(f"LOGIN_PASSWORD: {os.getenv('LOGIN_PASSWORD')}")
 
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'chave-secreta-muito-segura-e-dificil-de-adivinhar')
 
-# Credenciais de login do .env ou Railway
+# Credenciais de login do ambiente
 LOGIN_USERNAME = os.getenv('LOGIN_USERNAME')
 LOGIN_PASSWORD = os.getenv('LOGIN_PASSWORD')
 
