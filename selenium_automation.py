@@ -16,7 +16,7 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     chrome_options.add_argument("--disable-dev-shm-usage")
 
     driver = webdriver.Chrome(options=chrome_options)
-    wait = WebDriverWait(driver, 30)  # Aumentei para 30 segundos para dar mais tempo de carregamento
+    wait = WebDriverWait(driver, 30)  # Tempo de espera de 30 segundos
 
     log_messages = []
 
@@ -36,20 +36,31 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
         driver.find_element(By.ID, "botaoEfetuarLogin").click()
         log_and_print("Login enviado com sucesso! Aguardando o painel...")
 
-        # Verificar se o login foi bem-sucedido (exemplo: espera por um elemento do painel)
+        # Aguarda um tempo adicional para garantir o carregamento da página
+        time.sleep(5)  # Atraso de 5 segundos após o login
+        log_and_print("Aguardando carregamento completo da página...")
+
+        # Verificar se o login foi bem-sucedido
         try:
-            wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))  # Garante que a página carregou
+            wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+            current_url = driver.current_url
+            log_and_print(f"URL atual após login: {current_url}")
             log_and_print("Página do painel detectada.")
         except Exception as e:
             log_and_print(f"Erro ao carregar o painel após login: {e}")
-            driver.save_screenshot("/tmp/login_error.png")  # Salva screenshot para depuração
+            driver.save_screenshot("/tmp/login_error.png")
             return {"status": "error", "message": "Falha ao carregar o painel após login", "log": log_messages}
 
         # Navegar para a seção de Pedidos
         log_and_print("Tentando acessar a seção 'Pedidos'...")
-        pedidos_element = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[normalize-space()='Pedidos']")))
-        pedidos_element.click()
-        log_and_print("Na tela de listagem de Pedidos.")
+        try:
+            pedidos_element = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[normalize-space()='Pedidos']")))
+            pedidos_element.click()
+            log_and_print("Na tela de listagem de Pedidos.")
+        except Exception as e:
+            log_and_print(f"Elemento 'Pedidos' não encontrado: {e}")
+            driver.save_screenshot("/tmp/pedidos_error.png")
+            return {"status": "error", "message": "Elemento 'Pedidos' não localizado", "log": log_messages}
 
         # Continuação da automação
         total_pedidos = len(lista_de_pedidos)
@@ -111,7 +122,7 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     except Exception as e:
         error_message = f"❌ Ocorreu um erro durante a automação: {e}"
         log_and_print(error_message)
-        driver.save_screenshot("/tmp/automation_error.png")  # Salva screenshot para depuração
+        driver.save_screenshot("/tmp/automation_error.png")
         return {"status": "error", "message": error_message, "log": log_messages}
 
     finally:
