@@ -11,23 +11,13 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     LOGIN_URL = "https://app.mercos.com/login"
 
     chrome_options = Options()
-    chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    chrome_options.add_experimental_option('useAutomationExtension', False)
-    chrome_options.add_argument("--disable-cache")
-    chrome_options.add_argument("--disk-cache-size=0")
-    
-    # Configurações obrigatórias para rodar em modo headless no Railway
     chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--remote-debugging-port=9222")
 
-    # Usar Selenium Manager embutido (disponível no Selenium 4+)
     driver = webdriver.Chrome(options=chrome_options)
     wait = WebDriverWait(driver, 20)
 
-    # Lista para armazenar o log da execução, que será retornado para o Flask
     log_messages = []
 
     def log_and_print(message):
@@ -37,7 +27,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     log_and_print("--- INICIANDO AUTOMAÇÃO GERAL DE PEDIDOS ---")
 
     try:
-        # ETAPA DE LOGIN
         log_and_print(f"Acessando: {LOGIN_URL}")
         driver.get(LOGIN_URL)
         log_and_print("Preenchendo formulário de login...")
@@ -46,7 +35,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
         driver.find_element(By.ID, "botaoEfetuarLogin").click()
         log_and_print("Login enviado com sucesso! Aguardando o painel...")
 
-        # GRANDE LOOP DE PEDIDOS
         total_pedidos = len(lista_de_pedidos)
         for i, dados_do_pedido_atual in enumerate(lista_de_pedidos):
             log_and_print(f"\n\n--- PROCESSANDO PEDIDO {i+1} de {total_pedidos} PARA O CLIENTE {dados_do_pedido_atual['cnpj_cliente']} ---")
