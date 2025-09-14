@@ -16,7 +16,7 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     chrome_options.add_argument("--disable-dev-shm-usage")
 
     driver = webdriver.Chrome(options=chrome_options)
-    wait = WebDriverWait(driver, 20)
+    wait = WebDriverWait(driver, 30)  # Aumentei para 30 segundos para dar mais tempo de carregamento
 
     log_messages = []
 
@@ -27,6 +27,7 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     log_and_print("--- INICIANDO AUTOMAÇÃO GERAL DE PEDIDOS ---")
 
     try:
+        # ETAPA DE LOGIN
         log_and_print(f"Acessando: {LOGIN_URL}")
         driver.get(LOGIN_URL)
         log_and_print("Preenchendo formulário de login...")
@@ -35,13 +36,25 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
         driver.find_element(By.ID, "botaoEfetuarLogin").click()
         log_and_print("Login enviado com sucesso! Aguardando o painel...")
 
+        # Verificar se o login foi bem-sucedido (exemplo: espera por um elemento do painel)
+        try:
+            wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))  # Garante que a página carregou
+            log_and_print("Página do painel detectada.")
+        except Exception as e:
+            log_and_print(f"Erro ao carregar o painel após login: {e}")
+            driver.save_screenshot("/tmp/login_error.png")  # Salva screenshot para depuração
+            return {"status": "error", "message": "Falha ao carregar o painel após login", "log": log_messages}
+
+        # Navegar para a seção de Pedidos
+        log_and_print("Tentando acessar a seção 'Pedidos'...")
+        pedidos_element = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[normalize-space()='Pedidos']")))
+        pedidos_element.click()
+        log_and_print("Na tela de listagem de Pedidos.")
+
+        # Continuação da automação
         total_pedidos = len(lista_de_pedidos)
         for i, dados_do_pedido_atual in enumerate(lista_de_pedidos):
             log_and_print(f"\n\n--- PROCESSANDO PEDIDO {i+1} de {total_pedidos} PARA O CLIENTE {dados_do_pedido_atual['cnpj_cliente']} ---")
-            
-            xpath_pedidos_menu = "//span[normalize-space()='Pedidos']"
-            wait.until(EC.element_to_be_clickable((By.XPATH, xpath_pedidos_menu))).click()
-            log_and_print("Na tela de listagem de Pedidos.")
             
             wait.until(EC.element_to_be_clickable((By.ID, "btn_criar_pedido"))).click()
             log_and_print("Acesso à tela de criação de pedido.")
@@ -98,6 +111,7 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     except Exception as e:
         error_message = f"❌ Ocorreu um erro durante a automação: {e}"
         log_and_print(error_message)
+        driver.save_screenshot("/tmp/automation_error.png")  # Salva screenshot para depuração
         return {"status": "error", "message": error_message, "log": log_messages}
 
     finally:
