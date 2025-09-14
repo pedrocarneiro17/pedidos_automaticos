@@ -1,7 +1,5 @@
 import time
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,7 +13,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     chrome_options = Options()
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option('useAutomationExtension', False)
-    chrome_options.add_argument("--start-maximized")
     chrome_options.add_argument("--disable-cache")
     chrome_options.add_argument("--disk-cache-size=0")
     
@@ -26,8 +23,8 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--remote-debugging-port=9222")
 
-    service = ChromeService(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    # Usar Selenium Manager embutido (disponível no Selenium 4+)
+    driver = webdriver.Chrome(options=chrome_options)
     wait = WebDriverWait(driver, 20)
 
     # Lista para armazenar o log da execução, que será retornado para o Flask
@@ -40,7 +37,7 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
     log_and_print("--- INICIANDO AUTOMAÇÃO GERAL DE PEDIDOS ---")
 
     try:
-        # ETAPA DE LOGIN (AGORA RECEBE EMAIL E SENHA COMO PARÂMETROS)
+        # ETAPA DE LOGIN
         log_and_print(f"Acessando: {LOGIN_URL}")
         driver.get(LOGIN_URL)
         log_and_print("Preenchendo formulário de login...")
@@ -54,7 +51,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
         for i, dados_do_pedido_atual in enumerate(lista_de_pedidos):
             log_and_print(f"\n\n--- PROCESSANDO PEDIDO {i+1} de {total_pedidos} PARA O CLIENTE {dados_do_pedido_atual['cnpj_cliente']} ---")
             
-            # Garante que estamos na tela de listagem de pedidos
             xpath_pedidos_menu = "//span[normalize-space()='Pedidos']"
             wait.until(EC.element_to_be_clickable((By.XPATH, xpath_pedidos_menu))).click()
             log_and_print("Na tela de listagem de Pedidos.")
@@ -62,7 +58,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
             wait.until(EC.element_to_be_clickable((By.ID, "btn_criar_pedido"))).click()
             log_and_print("Acesso à tela de criação de pedido.")
             
-            # Preenchimento do formulário
             campo_cliente = wait.until(EC.presence_of_element_located((By.ID, "id_codigo_cliente")))
             campo_cliente.send_keys(dados_do_pedido_atual["cnpj_cliente"])
             time.sleep(1.5); campo_cliente.send_keys(Keys.ENTER)
@@ -73,7 +68,6 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
             time.sleep(1.5); campo_representada.send_keys(Keys.ENTER)
             log_and_print("Representada inserida.")
 
-            # Loop de produtos para o pedido atual
             log_and_print("-> Iniciando adição de produtos...")
             for produto in dados_do_pedido_atual["produtos"]:
                 campo_produto = wait.until(EC.presence_of_element_located((By.ID, "produto_autocomplete")))
@@ -88,9 +82,8 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
                 botao_adicionar = wait.until(EC.element_to_be_clickable((By.XPATH, "//a[@class='botao medio primario' and normalize-space()='Adicionar']")))
                 botao_adicionar.click()
                 log_and_print(f"--> Produto '{produto['codigo']}' ADICIONADO.")
-                time.sleep(1) # Pequena pausa para a página atualizar a lista de itens
+                time.sleep(1)
             
-            # Finalização do pedido atual
             botao_terminar = wait.until(EC.element_to_be_clickable((By.ID, "botao_terminei_de_adicionar")))
             botao_terminar.click()
             log_and_print("Processo de adição de itens finalizado.")
@@ -100,16 +93,16 @@ def execute_mercos_automation(email, senha, lista_de_pedidos):
             time.sleep(1.5); campo_condicao.send_keys(Keys.ENTER)
             log_and_print("Condição de Pagamento confirmada.")
             
-            time.sleep(2) # Pausa para a página processar antes de salvar detalhes
+            time.sleep(2)
             botao_salvar = wait.until(EC.presence_of_element_located((By.ID, "botao-submit")))
             driver.execute_script("arguments[0].click();", botao_salvar)
             log_and_print("Detalhes do pedido salvos.")
-            time.sleep(2) # Pausa para a página processar após salvar
+            time.sleep(2)
 
             botao_gerar_pedido = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn_gerar_pedido")))
             driver.execute_script("arguments[0].click();", botao_gerar_pedido)
             log_and_print(f"✅ PEDIDO {i+1} GERADO COM SUCESSO!")
-            time.sleep(3) # Pausa para ver a tela de sucesso antes de voltar para o próximo pedido
+            time.sleep(3)
 
         log_and_print("\n\n--- TODOS OS PEDIDOS FORAM PROCESSADOS ---")
         return {"status": "success", "log": log_messages}
