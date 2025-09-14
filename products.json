@@ -1,0 +1,546 @@
+[
+  {
+    "code": "00711",
+    "name": "FRANGO CONGELADO NUTRIZA"
+  },
+  {
+    "code": "11829",
+    "name": "FRANGO CONGELADO FRIATO"
+  },
+  {
+    "code": "00616",
+    "name": "Carcaça de Frango Congelado Friato (faixa de peso 19,500-20,500kg)"
+  },
+  {
+    "code": "47910",
+    "name": "MEIO DA ASA CONG. IQF 1KG (CX 12KG)"
+  },
+  {
+    "code": "48733",
+    "name": "COXINHA DA ASA CONG. IQF 1kg (CX 12KG)"
+  },
+  {
+    "code": "51747",
+    "name": "Coxinhas das Asas IQF 2kg (6x2) 12 kg"
+  },
+  {
+    "code": "51129",
+    "name": "SOBRECOXA DE FRANGO CONG.IQF 2KG (CX 12KG)"
+  },
+  {
+    "code": "48454",
+    "name": "COXA DE FRANGO CONG. IQF 1KG (CX 12KG)"
+  },
+  {
+    "code": "51748",
+    "name": "Coxas de Frango cong IQF 2kg (6x2) 12 kg"
+  },
+  {
+    "code": "51746",
+    "name": "Coxas e Sobrecoxa A Passarinho IQF 2kg (6x2) 12 kg"
+  },
+  {
+    "code": "48452",
+    "name": "FILE DE PEITO CONG. IQF 1KG (CX 12KG)"
+  },
+  {
+    "code": "51745",
+    "name": "File de Peito Cong. IQF 2kg (6x2) 12 kg"
+  },
+  {
+    "code": "48458",
+    "name": "FILEZINHO PEITO (SASSAMI) CONG. IQF 1KG (CX 12KG)"
+  },
+  {
+    "code": "49077",
+    "name": "FRANGO A PASSARINHO CONG. IQF 1KG (cx 12kg)"
+  },
+  {
+    "code": "12186",
+    "name": "CORTES TEMP. CONG. DE FRANGO - COXINHAS DAS ASAS 1KG (9X1)"
+  },
+  {
+    "code": "12187",
+    "name": "CORTES TEMP. CONG. DE FRANGO - COXA S/COXA PASSA. 1 KG (9X1)"
+  },
+  {
+    "code": "12189",
+    "name": "MEIO DA ASA TEMP. CONG. SABOR CASEIRO 10X800G( 8 KG)"
+  },
+  {
+    "code": "12214",
+    "name": "FILEZINHO SASSAMI TEMP. CONG. SABOR CASEIRO 10X800G (8 KG)"
+  },
+  {
+    "code": "12191",
+    "name": "CORTES TEMP. CONG. DE FRANGO - FRANGO A PASSAR. 1 KG (9X1)"
+  },
+  {
+    "code": "12562",
+    "name": "FILE COXA E SOBRECOXA TEMP. CONG. SABOR CASEIRO 10X800G 8 KG"
+  },
+  {
+    "code": "12615",
+    "name": "MEIO DAS ASAS TEMP. CONG. APIMENTADAS 10X800G ( 8 KG )"
+  },
+  {
+    "code": "12616",
+    "name": "COXINHA DAS ASAS TEMP. CONG. APIMENTADAS 10X800G ( 8 KG )"
+  },
+  {
+    "code": "12617",
+    "name": "COXINHA DAS ASAS TEMP. CONG. SABOR CASEIRO 10X800G ( 8 KG )"
+  },
+  {
+    "code": "12180",
+    "name": "MFC-CORACAO FRIATO ( 24 X 0,800GM ) 19,2 KG"
+  },
+  {
+    "code": "12179",
+    "name": "MFC-MOELA FRIATO (24X0,800GM) 19,2KG"
+  },
+  {
+    "code": "02375",
+    "name": "PES DE FRANGO CONGELADO 2 X 7,5 KG (15 KG)"
+  },
+  {
+    "code": "12428",
+    "name": "CCF-FILEZINHO SASSAMI ( 4 X 5 ) 20KG"
+  },
+  {
+    "code": "11453",
+    "name": "ASA DE FRANGO CONG. ENVELOPADA FRIATO"
+  },
+  {
+    "code": "11454",
+    "name": "COXINHA DA ASA CONG. ENVELOPADA FRIATO"
+  },
+  {
+    "code": "12599",
+    "name": "MEIO DA ASA ENVELOPADO (CX. 20KG)"
+  },
+  {
+    "code": "01027",
+    "name": "COXA/S.COXA DE FRANGO CONG. ENVELOPADA FRIATO"
+  },
+  {
+    "code": "23284",
+    "name": "Cortes Cong. De frango coxa sobrecoxa c/parte dorsal envelopada"
+  },
+  {
+    "code": "01026",
+    "name": "PEITO DE FRANGO CONG. ENVELOPADO FRIATO"
+  },
+  {
+    "code": "01028",
+    "name": "FILÉ DE PEITO DE FRANGO CONG. ENVELOPADO FRIATO"
+  },
+  {
+    "code": "62600",
+    "name": "FILE DE PEITO CG. FRIATO ENVELOPADO 19,5 KG"
+  },
+  {
+    "code": "4454",
+    "name": "FILEZINHO SASSAMI ENV 19,5 KG"
+  },
+  {
+    "code": "86871",
+    "name": "COXINHAS DAS ASAS CG FRIATO ENVELOPADO 19,5 KG"
+  },
+  {
+    "code": "6311",
+    "name": "COXA S.COXA DESOSSADA CG FRIATO ENV. 19,5 KG"
+  },
+  {
+    "code": "86872",
+    "name": "COXAS CG FRIATO ENVELOPADO 19,5 KG"
+  },
+  {
+    "code": "86873",
+    "name": "SOBRECOXAS CG FRIATO ENVELOPADO 19,5 KG"
+  },
+  {
+    "code": "12608",
+    "name": "FILEZINHO SASSAMI CG FRIATO ENV (20 X 1 KG) 20KG"
+  },
+  {
+    "code": "12609",
+    "name": "COXAS CG FRIATO FRIATO ENVELOPADO (20 X 1KG)"
+  },
+  {
+    "code": "12192",
+    "name": "FILE DE PEITO DE FRANGO CONG. MATURADO E TEMP. FRIATO (9X1)"
+  },
+  {
+    "code": "01016",
+    "name": "ASA DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01020",
+    "name": "COXINHA DA ASA CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "00412",
+    "name": "MEIO DA ASA CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01013",
+    "name": "COXA/S.COXA DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01021",
+    "name": "COXA DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01022",
+    "name": "SOBRECOXA DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "00777",
+    "name": "COXA/S.COXA DESOSSADA CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01014",
+    "name": "PEITO DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01015",
+    "name": "FILÉ DE PEITO DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "04431",
+    "name": "FILEZINHO DE PEITO (SASSAMI) CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01017",
+    "name": "CORAÇÃO DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "01018",
+    "name": "MOELA DE FRANGO CONG. BANDEJA FRIATO"
+  },
+  {
+    "code": "17852",
+    "name": "FIGADO DE FRANGO CONG BANDEJA"
+  },
+  {
+    "code": "86807",
+    "name": "CCF-FILEZINHO (SASSAMI) INDUSTRIAL 1X20KG"
+  },
+  {
+    "code": "86651",
+    "name": "CRF-FILEZINHO (SASSAMI) INDUSTRIAL 1X20KG"
+  },
+  {
+    "code": "02436",
+    "name": "FILE DE PEITO INDUSTRIAL 'B' CONGELADO"
+  },
+  {
+    "code": "14764",
+    "name": "MEIO PEITO DE FRANGO SEM OSSO SEM PELE E SEM SASSAMI - 18KG"
+  },
+  {
+    "code": "12651",
+    "name": "LINGUICA DE FRANGO FININHA 800G (15X0,800G)"
+  },
+  {
+    "code": "49973",
+    "name": "LINGÜIÇA DE FRANGO GROSSA TERMOSELADA FRIATO (4X5)"
+  },
+  {
+    "code": "12650",
+    "name": "LINGUICA DE FRANGO 0,800G (10X0,800G) 8KG"
+  },
+  {
+    "code": "12618",
+    "name": "LINGUICA DE FRANGO C/PIMENTA BIQUINHO (12X0,600)7,2KG"
+  },
+  {
+    "code": "92444",
+    "name": "LINGUICA DE FRANGO C/ OREGANO E AZEITE 600G TERMOFORMADA"
+  },
+  {
+    "code": "92442",
+    "name": "LINGUICA DE FRANGO C/ VINAGRETE 600G TERMOFORMADA"
+  },
+  {
+    "code": "92438",
+    "name": "LINGUICA DE FRANGO APIMENTADA 600G TERMOFORMADA"
+  },
+  {
+    "code": "83566",
+    "name": "LINGUICA DE FRANGO COM BACON 7,2 KG"
+  },
+  {
+    "code": "83562",
+    "name": "LINGUICA DE FRANGO COM QUEIJO COALHO 7,2 KG"
+  },
+  {
+    "code": "12258",
+    "name": "LINGUICA DE FRANGO C/ QUEIJO E BACON (12X0,600) 7,2 KG"
+  },
+  {
+    "code": "04554",
+    "name": "LINGUICA CUIABANA DE FRANGO (12X0,600) 7,2 KG"
+  },
+  {
+    "code": "91784",
+    "name": "LINGUICA DE FRANGO CONG. FRIATO (12X0,600) 7,2 KG"
+  },
+  {
+    "code": "51066",
+    "name": "LINGÜIÇA CHURRASCO TERMOFORMADA FRIATO (4X5)"
+  },
+  {
+    "code": "12648",
+    "name": "LINGUICA CHURRASCO 800G (10 X 0,800) 8KG"
+  },
+  {
+    "code": "12649",
+    "name": "LINGUIÇA CHURRASCO APIM. FININHA 800G (15X0,800G) 12KG"
+  },
+  {
+    "code": "95490",
+    "name": "LINGUICA CHURRASCO APIMENTADA FRIATO (4X5) 20KG"
+  },
+  {
+    "code": "92448",
+    "name": "LINGUICA CHURRASCO APIMENTADA 600G TERMOFORMADA"
+  },
+  {
+    "code": "13011",
+    "name": "LINGUICA CALABRESA FRESCAL (12X0,500) 6 KG"
+  },
+  {
+    "code": "83564",
+    "name": "LINGUICA PERNIL E PALETA COM QUEIJO COALHO 7,2 KG"
+  },
+  {
+    "code": "12647",
+    "name": "LINGUICA TOSCANA (12X0,600) 7,2 KG"
+  },
+  {
+    "code": "04553",
+    "name": "LINGUICA CUIABANA SUINA (12X0,600) 7,2 KG"
+  },
+  {
+    "code": "91786",
+    "name": "LINGUICA PERNIL E PALETA SUINA CONG.FRIATO (12X0,600) 7,2 KG"
+  },
+  {
+    "code": "92446",
+    "name": "LINGUICA PERNIL E PALETA APIMENTADA 600G TERMOFORMADA"
+  },
+  {
+    "code": "13213",
+    "name": "LINGUICA DEFUMADA DE FRANGO (6X2,4) 14,4KG"
+  },
+  {
+    "code": "62089",
+    "name": "LINGUICA DEFUMADA DE FRANGO (20x0,4KG) 8KG"
+  },
+  {
+    "code": "13214",
+    "name": "LINGÜIÇA TIPO CALABRESA COZ./DEF FRIATO (6x2,4 kg) 14,4 kg"
+  },
+  {
+    "code": "62534",
+    "name": "LINGÜIÇA TIPO CALABRESA COZ./DEF FRIATO ( 20x 0,4 kg) 8 kg"
+  },
+  {
+    "code": "60527",
+    "name": "LINGUICA DEFUMADA RETA ( 3 X 2,5 ) 7,5 KG"
+  },
+  {
+    "code": "86514",
+    "name": "LINGUICA MISTA DEFUMADA FININHA 2,5KG ( 4 X 2,5 ) 10Kg"
+  },
+  {
+    "code": "92548",
+    "name": "LINGUICA MISTA DEFUMADA FININHA 240G (20 X 0,240) 4,8 KG"
+  },
+  {
+    "code": "12170",
+    "name": "Lombo Canadense Friato (6x800g)"
+  },
+  {
+    "code": "12363",
+    "name": "LOMBO CANADENSE DEFUM. FATIADO FRIATO (16 X 0,200) 3,2KG"
+  },
+  {
+    "code": "49974",
+    "name": "SALSICHA HOT DOG FRIATO CONG. TERMOFORMADA ( 4X5 ) 20KG"
+  },
+  {
+    "code": "65088",
+    "name": "SALSICHA HOT DOG FRIATO CONG. PACOTE ( 4X5 ) 20KG"
+  },
+  {
+    "code": "50082",
+    "name": "SALSICHA FRANGO FRIATO CONG. TERMOFORMADA ( 4X5 ) 20KG"
+  },
+  {
+    "code": "88647",
+    "name": "Salsicha Hot Dog friato cong. Termoformada (8x3) 24 kg"
+  },
+  {
+    "code": "15128",
+    "name": "MORTADELA DEFUMADA (2 X 4,1 KG) 8,2KG"
+  },
+  {
+    "code": "16228",
+    "name": "MORTADELA DEFUMADA BOLINHA (9X720G) 6,48KG"
+  },
+  {
+    "code": "07664",
+    "name": "Mortadela Defumada Fatiada Friato (16x200g) 3,2 kg"
+  },
+  {
+    "code": "00243",
+    "name": "MORTARDELA MINI 1 KG"
+  },
+  {
+    "code": "57654",
+    "name": "MORTADELA MINE FRIATO 400 g (15x0,4)"
+  },
+  {
+    "code": "00220",
+    "name": "MORTARDELA NALO 3,5 KG"
+  },
+  {
+    "code": "00319",
+    "name": "MORTARDELA FRANGO 3,5 KG"
+  },
+  {
+    "code": "57653",
+    "name": "MORTADELA DE FRANGO MINE FRIATO 400GR (15x0,4)"
+  },
+  {
+    "code": "89662",
+    "name": "MORTADELA DE FRANGO MINE FRIATO 1kg"
+  },
+  {
+    "code": "52719",
+    "name": "PRESUNTO COZIDO S/ CAPA DE GORDURA FRIATO"
+  },
+  {
+    "code": "11999",
+    "name": "PRESUNTO FATIADO FRIATO (22 X 0,2) 4 KG"
+  },
+  {
+    "code": "52718",
+    "name": "APRESUNTADO FRIATO"
+  },
+  {
+    "code": "52717",
+    "name": "LANCHE DE FRANGO FRIATO"
+  },
+  {
+    "code": "12902",
+    "name": "STEAK DE FRANGO 100 G (30 UNIDADES) 3 KG"
+  },
+  {
+    "code": "12906",
+    "name": "FILEZINHO SASSAMI EMPANADO (2 X 2,5) 5KG"
+  },
+  {
+    "code": "12907",
+    "name": "FILEZINHO SASSAMI EMPANADO (6 X 1) 6 KG"
+  },
+  {
+    "code": "12908",
+    "name": "FRIATITOS TRADICIONAL (2 X 2,5) 5 KG"
+  },
+  {
+    "code": "12909",
+    "name": "FRIATITOS TRADICIONAL (6 X 1) 6 KG"
+  },
+  {
+    "code": "12910",
+    "name": "FRIATITOS TRADICIONAL (16 X 0,300) 4,8 KG"
+  },
+  {
+    "code": "13016",
+    "name": "BIG FRIATITOS COM QUEIJO (6 X 1) 6KG"
+  },
+  {
+    "code": "13028",
+    "name": "BIG FRIATITOS COM QUEIJO (16X0,300) 4,8 KG"
+  },
+  {
+    "code": "12905",
+    "name": "COXINHAS DAS ASAS EMP TRADICIONAL (6X0,700G) 4,2KG"
+  },
+  {
+    "code": "12904",
+    "name": "COXINHAS DAS ASAS EMP APIMENTADAS (6X0,700g) 4,2KG"
+  },
+  {
+    "code": "12903",
+    "name": "HAMBURGUER 56 G (36 UNIDADES) 2,016 KG"
+  },
+  {
+    "code": "12360",
+    "name": "PEITO DE FRANGO DEFUM. FATIADO ( 16 X 0,200) 3,2 KG"
+  },
+  {
+    "code": "12607",
+    "name": "BATATA PRE FRITA CONGELADA FRIATO CX 12 PCTE 2 KG"
+  },
+  {
+    "code": "12652",
+    "name": "BATATA PRE FRITA CONG. FRIATO ( 10 X 1,05 KG ) 10,5 KG"
+  },
+  {
+    "code": "09824",
+    "name": "ERVILHA FRIATO CONG (15X 300G) CX 4,5 KG"
+  },
+  {
+    "code": "09823",
+    "name": "BRÓCOLIS FRIATO CONG (15X 300G) CX 4,5 KG"
+  },
+  {
+    "code": "09820",
+    "name": "SELETA DE SLEGUMES FRIATO CONG (15X 300G) CX 4,5 KG"
+  },
+  {
+    "code": "10751",
+    "name": "COUVE FLOR CONG 15 X 300 G"
+  },
+  {
+    "code": "12181",
+    "name": "QUEIJO FATIADO FRIATO ( 21 X 0,150 ) 3,15 KG"
+  },
+  {
+    "code": "12310",
+    "name": "QUEIJO PRATO FATIADO FRIATO ( 21 X 0,150 ) 3,15KG"
+  },
+  {
+    "code": "12551",
+    "name": "QUEIJO COALHO FRIATO NO ESPETO (3.3 KG)"
+  },
+  {
+    "code": "12264",
+    "name": "MANTEIGA DE PRIMEIRA QUALIDADE FRIATO (18 X 200 G) 3,6 KG"
+  },
+  {
+    "code": "12265",
+    "name": "MANTEIGA DE PRIMEIRA QUALIDADE FRIATO (12X 500 G) 6,0 KG"
+  },
+  {
+    "code": "12320",
+    "name": "REQUEIJAO CREMOSO FRIATO (12X0,200) 2,4 KG"
+  },
+  {
+    "code": "12274",
+    "name": "PAO DE ALHO TRADICIONAL FRIATO (12X300G)"
+  },
+  {
+    "code": "12273",
+    "name": "PAO DE ALHO PICANTE FRIATO (12X300G)"
+  },
+  {
+    "code": "13007",
+    "name": "PAO DE ALHO C/ CALABRESA ( 12X400G ) 4,8 KG"
+  }
+]
