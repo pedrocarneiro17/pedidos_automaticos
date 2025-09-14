@@ -17,8 +17,8 @@ app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'chave-secreta-muito-segura-e-dificil-de-adivinhar')
 
 # Credenciais de login do ambiente
-LOGIN_USERNAME = os.getenv('LOGIN_USERNAME')
-LOGIN_PASSWORD = os.getenv('LOGIN_PASSWORD')
+LOGIN_USERNAME = os.getenv('LOGIN_USERNAME', '').strip()
+LOGIN_PASSWORD = os.getenv('LOGIN_PASSWORD', '').strip()
 
 # --- Carregamento dos "Bancos de Dados" JSON ---
 def load_data():
@@ -54,8 +54,8 @@ def login_required(f):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
+        username = request.form.get('username', '').strip()
+        password = request.form.get('password', '').strip()
         logger.debug(f"Form username: {username}, Form password: {password}")
         logger.debug(f"Expected LOGIN_USERNAME: {LOGIN_USERNAME}, LOGIN_PASSWORD: {LOGIN_PASSWORD}")
         if username == LOGIN_USERNAME and password == LOGIN_PASSWORD:
